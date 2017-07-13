@@ -5,19 +5,25 @@ namespace App\Manager\Contract;
 
 use App\Car;
 use App\Request\SaveCarRequest;
+use Illuminate\Support\Collection;
 
 interface CarManager
 {
     /**
-     * @return Car[]
+     * @return Collection
      */
-    public function findAll(): array;
+    public function findAll(): Collection;
 
     /**
      * @param int $id
      * @return Car|null
      */
     public function findById(int $id);
+
+    /**
+     * @return Collection
+     */
+    public function findCarsFromActiveUsers(): Collection;
 
     /**
      * @param SaveCarRequest $request

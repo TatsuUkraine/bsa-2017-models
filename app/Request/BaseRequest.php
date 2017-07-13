@@ -22,7 +22,7 @@ class BaseRequest
      */
     public function get(string $key, $default = null)
     {
-        return !isset($this->options[$key]) ? $this->options[$key] : $default;
+        return isset($this->options[$key]) ? $this->options[$key] : $default;
     }
 
     /**

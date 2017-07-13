@@ -27,7 +27,15 @@ class SaveUserRequest extends BaseRequest
      */
     public function getLastName()
     {
-        return $this->get('first_name');
+        return $this->get('last_name');
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive(): bool
+    {
+        return $this->get('is_active', true);
     }
 
     /**

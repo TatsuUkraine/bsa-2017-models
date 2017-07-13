@@ -5,19 +5,25 @@ namespace App\Manager\Contract;
 
 use App\Request\SaveUserRequest;
 use App\User;
+use Illuminate\Support\Collection;
 
 interface UserManager
 {
     /**
-     * @return User[]
+     * @return Collection
      */
-    public function findAll(): array;
+    public function findAll(): Collection;
 
     /**
      * @param int $id
      * @return User|null
      */
     public function findById(int $id);
+
+    /**
+     * @return Collection
+     */
+    public function findActive(): Collection;
 
     /**
      * @param SaveUserRequest $request

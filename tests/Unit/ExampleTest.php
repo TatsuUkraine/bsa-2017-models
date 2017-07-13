@@ -15,7 +15,6 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->app->make();
         $this->assertTrue(true);
     }
 }

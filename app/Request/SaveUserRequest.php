@@ -3,7 +3,7 @@
 namespace App\Request;
 
 
-use App\User;
+use App\Model\User;
 
 class SaveUserRequest extends BaseRequest
 {

@@ -3,12 +3,12 @@
 namespace Tests\Unit;
 
 
-use App\Car;
+use App\Model\Car;
 use App\Manager\CarManager;
 use App\Manager\UserManager;
 use App\Request\SaveCarRequest;
 use App\Request\SaveUserRequest;
-use App\User;
+use App\Model\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 

@@ -5,7 +5,7 @@ namespace Tests\Unit;
 
 use App\Manager\UserManager;
 use App\Request\SaveUserRequest;
-use App\User;
+use App\Model\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 

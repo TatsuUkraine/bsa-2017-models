@@ -3,7 +3,7 @@
 namespace App\Manager\Contract;
 
 
-use App\Car;
+use App\Model\Car;
 use App\Request\SaveCarRequest;
 use Illuminate\Support\Collection;
 

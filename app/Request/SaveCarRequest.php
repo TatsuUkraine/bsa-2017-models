@@ -3,8 +3,8 @@
 namespace App\Request;
 
 
-use App\Car;
-use App\User;
+use App\Model\Car;
+use App\Model\User;
 
 class SaveCarRequest extends BaseRequest
 {
@@ -57,7 +57,7 @@ class SaveCarRequest extends BaseRequest
     }
 
     /**
-     * @return int|null
+     * @return float|null
      */
     public function getMileage()
     {

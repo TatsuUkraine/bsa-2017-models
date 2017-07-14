@@ -8,10 +8,11 @@ use App\User;
 
 class SaveCarRequest extends BaseRequest
 {
-    public function __construct(array $options, Car $car = null)
+    public function __construct(array $options, User $user, Car $car = null)
     {
         parent::__construct(array_merge([
-            'car' => $car
+            'car' => $car,
+            'user' => $user
         ], $options));
     }
 
@@ -72,9 +73,9 @@ class SaveCarRequest extends BaseRequest
     }
 
     /**
-     * @return User|null
+     * @return User
      */
-    public function getUser()
+    public function getUser(): User
     {
         return $this->get('user');
     }

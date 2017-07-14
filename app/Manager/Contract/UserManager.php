@@ -38,4 +38,12 @@ interface UserManager
      * @return User
      */
     public function saveUser(SaveUserRequest $request): User;
+
+    /**
+     * Delete User By ID
+     *
+     * @param int $userId
+     * @return void
+     */
+    public function deleteUser(int $userId);
 }

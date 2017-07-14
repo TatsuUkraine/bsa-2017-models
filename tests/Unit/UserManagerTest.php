@@ -82,6 +82,11 @@ class UserManagerTest extends TestCase
 
         $userResult = $this->manager->findById($user->id);
         $this->assertEquals($user->toArray(), $userResult->toArray());
+
+        $this->manager->deleteUser($user->id);
+
+        $userResult = $this->manager->findById($user->id);
+        $this->assertNull($userResult);
     }
 
     public function testActiveUsers()

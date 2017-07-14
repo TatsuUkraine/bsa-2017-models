@@ -38,4 +38,12 @@ interface CarManager
      * @return Car
      */
     public function saveCar(SaveCarRequest $request): Car;
+
+    /**
+     * Delete Car by ID
+     *
+     * @param int $carId
+     * @return void
+     */
+    public function deleteCar(int $carId);
 }

@@ -133,6 +133,37 @@ class CarManagerTest extends TestCase
         $this->assertNotContains($car2->toArray(), $carList);
     }
 
+    public function testDeleteCarsByUser()
+    {
+        $user = $this->createUser();
+        $carIds = [];
+
+        $request = new SaveCarRequest([
+            'registration_number' => 'MB123456',
+            'model' => 'Toyota',
+            'color' => 'FFF'
+        ], $user);
+        $car1 = $this->manager->saveCar($request);
+        $cardIds[] = $car1->id;
+
+        $request = new SaveCarRequest([
+            'registration_number' => 'AB123456',
+            'model' => 'Honda',
+            'color' => '000'
+        ], $user);
+
+        $car2 = $this->manager->saveCar($request);
+        $cardIds[] = $car2->id;
+
+        $this->userManager->deleteUser($user->id);
+
+        $carList = $this->manager->findAll();
+
+        foreach ($carList as $carItem) {
+            $this->assertNotContains($carItem->id, $cardIds);
+        }
+    }
+
     protected function createUser(bool $isActive = true): User
     {
         $request = new SaveUserRequest([

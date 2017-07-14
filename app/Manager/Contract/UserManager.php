@@ -4,7 +4,7 @@ namespace App\Manager\Contract;
 
 
 use App\Request\SaveUserRequest;
-use App\Model\User;
+use App\Entity\User;
 use Illuminate\Support\Collection;
 
 interface UserManager

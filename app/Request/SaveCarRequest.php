@@ -3,8 +3,8 @@
 namespace App\Request;
 
 
-use App\Model\Car;
-use App\Model\User;
+use App\Entity\Car;
+use App\Entity\User;
 
 class SaveCarRequest extends BaseRequest
 {

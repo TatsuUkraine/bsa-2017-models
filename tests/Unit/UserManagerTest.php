@@ -4,9 +4,9 @@ namespace Tests\Unit;
 
 
 use App\Manager\UserManager;
-use App\Request\SaveUserRequest;
 use App\Entity\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\Mock\SaveUserRequest;
 use Tests\TestCase;
 
 class UserManagerTest extends TestCase

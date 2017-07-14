@@ -4,7 +4,7 @@ namespace App\Manager\Contract;
 
 
 use App\Entity\Car;
-use App\Request\SaveCarRequest;
+use App\Request\Contract\SaveCarRequest;
 use Illuminate\Support\Collection;
 
 interface CarManager

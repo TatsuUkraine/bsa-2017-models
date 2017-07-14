@@ -6,10 +6,10 @@ namespace Tests\Unit;
 use App\Entity\Car;
 use App\Manager\CarManager;
 use App\Manager\UserManager;
-use App\Request\SaveCarRequest;
-use App\Request\SaveUserRequest;
 use App\Entity\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\Mock\SaveCarRequest;
+use Tests\Mock\SaveUserRequest;
 use Tests\TestCase;
 
 class CarManagerTest extends TestCase

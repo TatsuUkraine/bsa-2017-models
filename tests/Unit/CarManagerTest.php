@@ -48,6 +48,23 @@ class CarManagerTest extends TestCase
         $this->assertInstanceOf(Car::class, $car);
         $this->assertArraySubset($data, $car->toArray());
         $this->assertEquals($user->toArray(), $car->user->toArray());
+        $this->assertNotNull($car->id);
+
+        $carId = $car->id;
+
+        $data = [
+            'registration_number' => 'MB123456',
+            'model' => 'Toyota',
+            'color' => 'black'
+        ];
+
+        $request = new SaveCarRequest($data, $user, $car);
+        $car = $this->manager->saveCar($request);
+
+        $this->assertInstanceOf(Car::class, $car);
+        $this->assertArraySubset($data, $car->toArray());
+        $this->assertEquals($user->toArray(), $car->user->toArray());
+        $this->assertEquals($carId, $car->id);
     }
 
     public function testCollection()

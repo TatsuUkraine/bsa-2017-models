@@ -5,7 +5,7 @@ namespace App\Request;
 
 use App\Entity\User;
 
-class SaveUserRequest extends BaseRequest
+class SaveUserRequest extends AbstractRequest
 {
     public function __construct(array $options, User $user = null)
     {

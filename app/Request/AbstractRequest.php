@@ -3,7 +3,7 @@
 namespace App\Request;
 
 
-class BaseRequest
+abstract class AbstractRequest
 {
     /**
      * @var array
@@ -28,9 +28,9 @@ class BaseRequest
     /**
      * @param string $key
      * @param $value
-     * @return BaseRequest
+     * @return AbstractRequest
      */
-    public function set(string $key, $value): BaseRequest
+    public function set(string $key, $value): AbstractRequest
     {
         $this->options[$key] = $value;
         return $this;

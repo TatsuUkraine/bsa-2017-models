@@ -6,7 +6,7 @@ namespace App\Request;
 use App\Entity\Car;
 use App\Entity\User;
 
-class SaveCarRequest extends BaseRequest
+class SaveCarRequest extends AbstractRequest
 {
     public function __construct(array $options, User $user, Car $car = null)
     {

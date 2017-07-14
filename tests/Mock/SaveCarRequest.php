@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Request;
+namespace Tests\Mock;
 
 
 use App\Entity\Car;
 use App\Entity\User;
+use App\Request\Contract\SaveCarRequest as SaveCarRequestContract;
 
-class SaveCarRequest extends AbstractRequest
+class SaveCarRequest extends AbstractRequest implements SaveCarRequestContract
 {
     public function __construct(array $options, User $user, Car $car = null)
     {

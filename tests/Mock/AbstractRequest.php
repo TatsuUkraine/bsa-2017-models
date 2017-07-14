@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Request;
+namespace Tests\Mock;
 
 
 abstract class AbstractRequest

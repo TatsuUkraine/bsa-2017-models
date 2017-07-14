@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Request;
+namespace Tests\Mock;
 
 
 use App\Entity\User;
 
-class SaveUserRequest extends AbstractRequest
+class SaveUserRequest extends AbstractRequest implements \App\Request\Contract\SaveUserRequest
 {
     public function __construct(array $options, User $user = null)
     {

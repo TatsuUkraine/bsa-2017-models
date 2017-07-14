@@ -3,7 +3,7 @@
 namespace App\Manager\Contract;
 
 
-use App\Request\SaveUserRequest;
+use App\Request\Contract\SaveUserRequest;
 use App\Entity\User;
 use Illuminate\Support\Collection;
 

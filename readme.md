@@ -1,51 +1,60 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+В папке App созданы классы User и Car которые представляют модели
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+В папке App/Manager созданы менеджеры, которые работают с соответствующими моделями
 
-## About Laravel
+В папке Tests/Unit находятся тесты (CarManagerTest, UserManagerTest)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+#### Задание 1
+Создать миграции которые создадут таблицы Users Cars со
+следующими полями
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+users
+- first_name (string)
+- last_name (string)
+- is_active (bool)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+cars
+- color (string)
+- model (string)
+- registration_number (string)
+- year (int)
+- mileage (int)
+- price (float)
+- user_id (int)
 
-## Learning Laravel
+user_id поле должно содержать внешний ключ на таблицу cars
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Изменить классы User и Car и сделать из них модели,
+которые будут описывать соответствующие таблицы
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+В моделях должно быть описание relations между ними
 
-## Laravel Sponsors
+#### Задание 2
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+Реализовать методы описанные в интерфейсе UserManager
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+**findAll** - возвращает коллекцию всех пользователей
 
-## Contributing
+**findById** - возвращает пользователя по ID, если пользователя с таким идентификатором не существует - возвращает NULL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+**findActive** - возвращает пользователей у которые поле is_active = true
 
-## Security Vulnerabilities
+**saveUser** - создает/обновляет запись пользователя на основе объекта Request
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+**deleteUser** - удаляет запись поьзователя по ID из таблицы, при удалении должны также
+удаляться все машины привязанные к этому пользователю
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+#### Задание 3
+
+Реализовать методы описанные в интерфейсе CarManager
+
+**findAll** - возвращает коллекцию всех машин
+
+**findById** - возвращает машину по ID, если машины с таким идентификатором не существует - возвращает NULL
+
+**findCarsFromActiveUsers** - возвращает машины, которые привязаны к пользователям у которых поле is_active = true
+
+**saveCar** - создает/обновляет запись машины на основе объекта Request
+
+**deleteUser** - удаляет запись машины по ID из таблицы

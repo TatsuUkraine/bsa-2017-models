@@ -49,7 +49,7 @@ class SaveCarRequest extends BaseRequest
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
     public function getYear()
     {
@@ -57,7 +57,7 @@ class SaveCarRequest extends BaseRequest
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
     public function getMileage()
     {

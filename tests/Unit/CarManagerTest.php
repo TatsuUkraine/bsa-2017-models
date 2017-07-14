@@ -104,7 +104,14 @@ class CarManagerTest extends TestCase
         $car = $this->manager->saveCar($request);
 
         $carResult = $this->manager->findById($car->id);
+        $this->assertNotNull($carResult);
         $this->assertEquals($car->toArray(), $carResult->toArray());
+
+        $carId = $carResult->id;
+
+        $this->manager->deleteCar($car->id);
+        $carResult = $this->manager->findById($carId);
+        $this->assertNull($carResult);
     }
 
     public function testFindCarsByActiveUser()
@@ -133,7 +140,7 @@ class CarManagerTest extends TestCase
         $this->assertNotContains($car2->toArray(), $carList);
     }
 
-    public function testDeleteCarsByUser()
+    public function testDeleteCarsWithUser()
     {
         $user = $this->createUser();
         $carIds = [];
